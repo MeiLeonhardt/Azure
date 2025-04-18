@@ -87,6 +87,7 @@ In avanzate inserisco le porte 80:80 e 443:443. Se voglio posso anche inserire l
 ![image](https://github.com/user-attachments/assets/559e1de8-c8ba-426c-a063-4b2c8e638ad9)
 
 Infine, per verificare se la pagina è online mi connetto con l'ip pubblico della macchina, che è il dominio su cui lavora la macchina, posso anche risolvere il nome dell'ip se acquisto un dominio e lo associo all'IP pubblico della VM.
+Il nostro sito è ufficialmente esposto su internet: Welcome to the internet!!
 ![image](https://github.com/user-attachments/assets/b3240397-7132-4402-b318-88bc7b896751)
 
 
