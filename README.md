@@ -15,7 +15,7 @@ move C:\Users\tuonomeutente\Downloads\nomefilescaricato_key.pem C:\Users\TuoNome
 ssh -i C:\Users\tuonomeutente\.ssh\nomefilescaricato_key.pem userscelto@IPpubblicoVM
 ```
 
-## connessione con password (-p)
+## Connessione con password (-p)
 ```
 #serve per richiamare la password di accesso
 #Attenzione! è importante inserire la password manualmente, non copia-incolla
