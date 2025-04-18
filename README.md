@@ -117,3 +117,6 @@ nano nomepagina.html
 #per inserire titolo <h1> TITOLO </h1>
 #per inserire paragrafo <p> paragrafo </p>
 ```
+
+![image](https://github.com/user-attachments/assets/f0f67c04-fab4-42f3-9057-90354ac3ddc6)
+
