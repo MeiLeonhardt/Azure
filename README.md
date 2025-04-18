@@ -120,3 +120,35 @@ nano nomepagina.html
 
 ![image](https://github.com/user-attachments/assets/f0f67c04-fab4-42f3-9057-90354ac3ddc6)
 
+# ESERCIZIO
+1 )Da ssh visualizzare tutti i contaienr in esecuzione.
+```
+docker ps
+```
+2) sempre da sssh visualizzare tutti i comandi con il comando docker ps -a ( usare sudo se necessario)
+```
+docker ps -a
+```
+3) creare un nuovo container usare portaner web gui ( nginx ) mappare 3000 : 80 e 3001 : 443
+```
+sudo docker run -d --name my-nginx -p 3000:80 -p 3001:443 nginx
+```
+5) Aprire le porte necessarie su azure per visionare io container ( tips : dovreste vedere http://ip_azure:3000)
+> direttamente da portale //
+```
+sudo az network nsg rule create --resource-group <nome_del_tuo_resource_group> --nsg-name <nome_del_tuo_nsg> --name Allow-HTTP --protocol Tcp --priority 1000 --destination-port-range 3000 --access Allow --direction Inbound
+```
+6) fermare il container da ssh .
+```
+sudo docker stop my-nginx
+```
+6 ) verificare che anche portainer ha dato il container fermo ( f5 per ricaricare la pagina )
+
+7 ) visionare da ssh i log del container
+```
+sudo docker logs my-nginx
+```
+8 ) cancellare il container da ssh  e controllare che non esista più
+```
+sudo docker rm my-nginx
+```
