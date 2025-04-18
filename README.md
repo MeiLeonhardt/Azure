@@ -102,11 +102,8 @@ apt install nano
 ```
 #controllo che sia andato a buon fine
 nano --version
-
-![Screenshot 2025-04-18 125957](https://github.com/user-attachments/assets/4616cd3b-b3da-48b0-86dc-42fa77858a05)
-
-
 ```
+![Screenshot 2025-04-18 125957](https://github.com/user-attachments/assets/4616cd3b-b3da-48b0-86dc-42fa77858a05)
 ```
 cd /usr/share/nginx/html
 ```
