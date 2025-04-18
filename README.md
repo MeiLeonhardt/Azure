@@ -102,7 +102,9 @@ apt install nano
 ```
 #controllo che sia andato a buon fine
 nano --version
-![image](https://github.com/user-attachments/assets/86eccc7e-0e57-48eb-b9a3-228e35f7c158)
+
+![Screenshot 2025-04-18 125957](https://github.com/user-attachments/assets/4616cd3b-b3da-48b0-86dc-42fa77858a05)
+
 
 ```
 ```
