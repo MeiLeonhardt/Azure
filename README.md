@@ -90,5 +90,31 @@ Infine, per verificare se la pagina è online mi connetto con l'ip pubblico dell
 Il nostro sito è ufficialmente esposto su internet: Welcome to the internet!!
 ![image](https://github.com/user-attachments/assets/b3240397-7132-4402-b318-88bc7b896751)
 
+# Modificare sito web
+![image](https://github.com/user-attachments/assets/fd932e55-9180-4ab2-8b1f-0354d554f0a3)
 
+```
+apt-get update
+```
+```
+apt install nano
+```
+```
+#controllo che sia andato a buon fine
+nano --version
+![image](https://github.com/user-attachments/assets/86eccc7e-0e57-48eb-b9a3-228e35f7c158)
 
+```
+```
+cd /usr/share/nginx/html
+```
+```
+#per modificare homepage
+nano index.html
+```
+```
+#nuova pagina
+nano nomepagina.html
+#per inserire titolo <h1> TITOLO </h1>
+#per inserire paragrafo <p> paragrafo </p>
+```
