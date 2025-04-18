@@ -8,7 +8,7 @@ mkdir C:\Users\Tuonomeutente\.ssh
 ```
 ```
 #spostare file da download a .ssh
-move C:\Users\tuonomeutente\Downloads\nomefilescaricato_key.pem C:\Users\saras\.ssh
+move C:\Users\tuonomeutente\Downloads\nomefilescaricato_key.pem C:\Users\TuoNomeUtente\.ssh
 ```
 ```
 #eseguo la connessione
