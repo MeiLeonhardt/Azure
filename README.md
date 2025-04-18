@@ -14,10 +14,13 @@ move C:\Users\tuonomeutente\Downloads\nomefilescaricato_key.pem C:\Users\TuoNome
 #eseguo la connessione
 ssh -i C:\Users\tuonomeutente\.ssh\nomefilescaricato_key.pem userscelto@IPpubblicoVM
 ```
+
+## connessione con password (-p)
 ```
-#connessione con password (-p) serve per richiamare la password di accesso
+#serve per richiamare la password di accesso
 #Attenzione! è importante inserire la password manualmente, non copia-incolla
 ssh -i -p nomeutente@IPpubblico
+ssh nomeutente@IPpubblico
 ```
 ```
 sudo apt update
