@@ -2,7 +2,10 @@
 Portal Azure Management
 
 ## Connessione con chiave pubblica a VM-Linux porta SSH
-#in Ubuntu per avere accesso come root si può utilizzare su- ma è sconsigliato (soprattutto alle prime armi) perché hai poteri illimitati e rischi di rompere tutto >.<
+Nei sistemi Linux per avere accesso come root si può utilizzare su- ma è sconsigliato (soprattutto alle prime armi) perché hai poteri illimitati e rischi di rompere tutto >.<
+
+In compenso, ogni volta che avrai bisogno di permessi superiori, ti basta inserire "sudo" prima di ogni comando.
+sudo="super user do" --> forzatura per costringere il sistema ad eseguire un comando a lvl superiore
 ```
 #create .ssh 
 mkdir C:\Users\Tuonomeutente\.ssh
@@ -47,7 +50,6 @@ sudo apt update
 sudo apt install docker-ce -y
 ```
 ```
-#sudo="super user do" --> forzatura per costringere il sistema ad eseguire un comando a lvl superiore
 #systemcl> system control, ovvero gestore dei servizi
 sudo systemctl start docker
 ```
