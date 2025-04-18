@@ -27,6 +27,10 @@ ssh -i -p nomeutente@IPpubblico
 ssh nomeutente@IPpubblico
 ```
 ```
+#per cambiare password
+passwd
+```
+```
 sudo apt update
 ```
 ```
