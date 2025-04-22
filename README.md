@@ -152,22 +152,18 @@ sudo docker logs Webnginx
 ```
 sudo docker rm Webnginx
 ```
+_____________________________________________________________________________________________________________________________
 # Creazione di un DockerFile
 Passo 1 : Creare la struttura del progetto
 ```
 mkdir hello-docker
 cd hello-docker
 ```
-## Node.js 
-Caratteristiche di un'immagine Node.js
-Node.js e NPM: Un'immagine Node.js include l'installazione di Node.js, che è un ambiente di runtime per JavaScript, e NPM (Node Package Manager), che è il gestore di pacchetti per Node.js. Questi strumenti sono essenziali per eseguire e gestire applicazioni JavaScript sul server.
-Configurazione di base: Le immagini Node.js sono configurate con le impostazioni di base necessarie per eseguire applicazioni Node.js, come variabili d'ambiente e percorsi di installazione.
-Versioni: Le immagini Node.js sono disponibili in diverse versioni, consentendo agli sviluppatori di scegliere la versione di Node.js più adatta alle loro applicazioni. Ad esempio, puoi trovare immagini per versioni specifiche come node:14, node:16, ecc.
-Compatibilità: Utilizzando un'immagine Node.js, gli sviluppatori possono garantire che le loro applicazioni funzionino in modo coerente su diverse macchine e ambienti, poiché il container include tutte le dipendenze necessarie.
+> creazione di una nuova directory hello-docker> cd hello-docker> directory che contiene tutti i file necessari per il progetto.
 
+## Node.js
 Passo 2 :
-Creare l'applicazione Node.js:
-Crea un file chiamato app.js con il seguente contenuto:
+Creare l'applicazione Node.js> file chiamato app.js con il seguente contenuto:
 ```
 const express = require('express');
 const app = express();
@@ -182,9 +178,18 @@ app.listen(port, () => {
 });
 
 ```
+Con questo passaggio creo una web-app con il framework Express. Risponde su porta 3000, "Hello,world!" quando viene effettuata la richiesta.
+
+Un'immagine Node.js include l'installazione di Node.js, che è un ambiente di runtime per JavaScript, e NPM (Node Package Manager), che è il gestore di pacchetti per Node.js. 
+Questi strumenti sono essenziali per eseguire e gestire applicazioni JavaScript sul server.
+
+1. Le immagini Node.js sono configurate con le impostazioni di base necessarie per eseguire applicazioni Node.js, come variabili d'ambiente e percorsi di installazione.
+2. Le immagini Node.js sono disponibili in diverse versioni, consentendo agli sviluppatori di scegliere la versione di Node.js più adatta alle loro applicazioni. Ad esempio, puoi trovare immagini per versioni specifiche come node:14, node:16, ecc.
+3. Utilizzando un'immagine Node.js, gli sviluppatori possono garantire che le loro applicazioni funzionino in modo coerente su diverse macchine e ambienti, poiché il container include tutte le dipendenze necessarie.
+
 Passo 3:
-Creare un file package.json:
-Crea un file chiamato package.json con il seguente contenuto: esso contiene informazioni importanti riguardanti il progetto, le sue dipendenze e le configurazioni necessarie per gestire l'applicazione. Ecco una panoramica delle sue principali caratteristiche e utilizzi:
+Creare un file package.json: questo file contiene informazioni importanti riguardanti il progetto, le sue dipendenze e le configurazioni necessarie per gestire l'applicazione. In questo caso è specificato che il progetto dipende dal pacchetto "express".
+
 1. Contenuto di un package.json
 - Nome e versione:
     - name: Il nome del pacchetto o del progetto.
@@ -201,6 +206,7 @@ Crea un file chiamato package.json con il seguente contenuto: esso contiene info
 - scripts: Un oggetto che definisce comandi personalizzati che possono essere eseguiti tramite npm.
 6. Configurazioni:
 - Puoi includere altre configurazioni specifiche per il tuo progetto o per le dipendenze.
+
 ```
 {
   "name": "hello-docker",
@@ -215,17 +221,16 @@ Crea un file chiamato package.json con il seguente contenuto: esso contiene info
 }
 ```
 Passo 4:
-
 Installare le dipendenze:
-Esegui il seguente comando per installare Express:
+Esegui il seguente comando per installare Express. Questo comando legge il file package.json e installa le dipendenze specificate nella directory node_modules.
 ```
 npm install
 ```
-Creare un Dockerfile:
+Passo 5: Creare un Dockerfile
 ```
 # Usa un'immagine base di Node.js
 FROM node:14
-Questa riga specifica l'immagine base da cui partire per costruire la tua immagine Docker. In questo caso, stai utilizzando l'immagine ufficiale di Node.js, versione 14. Docker scaricherà questa immagine dal Docker Hub se non è già presente localmente.
+Specifica l'immagine da utilizzare per costruire l'immagine Docker. In questo caso, stai utilizzando l'immagine ufficiale di Node.js, versione 14. Docker scaricherà questa immagine dal Docker Hub se non è già presente localmente.
 2. WORKDIR /usr/src/app
 Questa riga imposta la directory di lavoro all'interno del container. Tutti i comandi successivi verranno eseguiti in questa directory. Se la directory non esiste, Docker la creerà automaticamente. In questo caso, stai impostando /usr/src/app come directory di lavoro.
 3. COPY package*.json ./
@@ -239,19 +244,22 @@ Questa riga indica che il container ascolterà sulla porta 3000. È una dichiara
 7. CMD ["npm", "start"]
 Questa riga specifica il comando predefinito da eseguire quando il container viene avviato. In questo caso, stai eseguendo npm start, che di solito avvia l'applicazione Node.js. Puoi sovrascrivere questo comando quando avvii il container, ma se non lo fai, verrà eseguito questo comando.
 
-Costruire l'immagine Docker:
+Passo 6: Costruire l'immagine Docker
+Questo comando costruisce l'immagine Docker utilizzando il Dockerfile presente nella directory corrente e la etichetta con il nome hello-docker
+
 ```
 sudo docker build -t hello-docker .
 ```
 
-
-Eseguire il container:
-Esegui il container con il seguente comando:
-bash
+Passo 7: Eseguire il container
+Esegui il container con il seguente comando bash
 
 ```
 sudo docker run -d -p 3000:3000 hello-docker
 ```
+1. Crea un nuovo container basato sull'immagine hello-docker.
+2. Avvia il container in background.
+3. Mappa la porta 3000 del container alla porta 3000 della tua macchina host, consentendoti di accedere all'applicazione Node.js in esecuzione nel container.
 
 Testare l'applicazione:
 Apri il tuo browser e vai su http://localhost:3000. Dovresti vedere il messaggio "Hello, World!".
