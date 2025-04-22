@@ -163,7 +163,7 @@ cd hello-docker
 
 ## Node.js
 Passo 2 :
-Creare l'applicazione Node.js> file chiamato app.js con il seguente contenuto:
+Creare l'applicazione Node.js> all'interno del file la porta dichiarate deve essere la stessa del Dockerfile, altrimenti ci darà errore> "app.js" con il seguente contenuto:
 ```
 const express = require('express');
 const app = express();
@@ -227,7 +227,7 @@ Esegui il seguente comando per installare Express. Questo comando legge il file 
 npm install
 ```
 Passo 5: Creare un Dockerfile
-```
+
 # Usa un'immagine base di Node.js
 FROM node:14
 Specifica l'immagine da utilizzare per costruire l'immagine Docker. In questo caso, stai utilizzando l'immagine ufficiale di Node.js, versione 14. Docker scaricherà questa immagine dal Docker Hub se non è già presente localmente.
