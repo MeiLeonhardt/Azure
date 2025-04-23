@@ -123,7 +123,10 @@ app.listen(3000, () => {
   console.log('Server listening on port 3001');
 });
 ```
+### sudo docker-compose up vs. sudo docker-compose up --build
 ```
-sudo docker-compose up --build
+sudo docker-compose up --build #anche se le immagini esistono già, docker le ricostruisce di nuovo
+sudo docker compose up #non ricostruisce le immagini ma riutilizza quelle che già sono esistenti
+```
 
 
