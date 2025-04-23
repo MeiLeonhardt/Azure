@@ -80,6 +80,7 @@ http {
 }
 ```
 ## file package.json
+questo file ha la lista delle dipendenze che mancano per il deployment> si tratta di uno degli elementi che sere per deployare con Dockerfile. .json è un linguaggio che contiene valori con dipendenze, in questo caso l'unico valore di cui ha bisogo è express
 ```
 {
   "name": "hello-docker",
@@ -122,4 +123,7 @@ app.listen(3000, () => {
   console.log('Server listening on port 3001');
 });
 ```
+```
+sudo docker-compose up --build
+
 
