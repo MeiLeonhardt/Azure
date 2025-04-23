@@ -1,6 +1,8 @@
 # Azure : Docker
 Portal Azure Management
 
+https://zafirogroup.gitbook.io/terraform
+
 ## Connessione con chiave pubblica a VM-Linux porta SSH
 Nei sistemi Linux per avere accesso come root si può utilizzare su- ma è sconsigliato (soprattutto alle prime armi) perché hai poteri illimitati e rischi di rompere tutto >.<
 
