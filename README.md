@@ -41,38 +41,35 @@ sudo apt install apt-transport-https ca-certificates curl software-properties-co
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
-Aggiungere il repository ufficiale di Docker al sistema Ubuntu:
-```1. sudo```
+```
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+```
+Questo comando serve per aggiungere il repository ufficiale di Docker al sistema Ubuntu:
+1. ```sudo```
 Esegui il comando come amministratore (root). Questo è necessario perché stai aggiungendo un repository al sistema, che richiede permessi elevati.
-```
-2. add-apt-repository
-```
+
+2. ```add-apt-repository```
+
 Questo è un comando di Ubuntu (e altre distribuzioni basate su Debian) che permette di aggiungere un nuovo repository di pacchetti al sistema.
-
 I repository contengono pacchetti software (in formato .deb) che possono essere installati tramite apt (il gestore di pacchetti di Ubuntu).
-
-```3. "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"```
+3. ```"deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"```
 Questo è il repository che stai aggiungendo. Vediamo il significato di ciascuna parte:
 
-deb: Indica che il repository contiene pacchetti .deb (per sistemi basati su Debian, come Ubuntu).
+```deb```: Indica che il repository contiene pacchetti ```.deb``` (per sistemi basati su Debian, come Ubuntu).
 
-[arch=amd64]: Specifica che il repository è per l'architettura amd64 (cioè per sistemi a 64 bit).
+```[arch=amd64]```: Specifica che il repository è per l'architettura amd64 (cioè per sistemi a 64 bit).
 
-https://download.docker.com/linux/ubuntu: L'URL del repository ufficiale di Docker per Ubuntu.
+```https://download.docker.com/linux/ubuntu```: L'URL del repository ufficiale di Docker per Ubuntu.
 
 ```$(lsb_release -cs)```: Esegui il comando lsb_release -cs, che restituisce il codename della tua versione di Ubuntu. Ad esempio:
 
-Su Ubuntu 20.04 (Focal Fossa), lsb_release -cs restituirà focal.
+Su Ubuntu 20.04 (Focal Fossa), ```lsb_release -cs``` restituirà focal.
 
 Su Ubuntu 18.04 (Bionic), restituirà bionic.
 
 In questo modo, il comando si adatta dinamicamente alla versione di Ubuntu che stai utilizzando, aggiungendo il repository appropriato.
 
-stable: Questo è il ramo stabile del repository Docker. Docker ha diverse versioni (es. "stable", "edge"), ma solitamente si utilizza "stable" per avere una versione stabile e testata.
-
-```
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-```
+```stable```: Questo è il ramo stabile del repository Docker. Docker ha diverse versioni (es. "stable", "edge"), ma solitamente si utilizza "stable" per avere una versione stabile e testata.
 ```
 #Aggiornamento dell'elenco dei pacchetti
 sudo apt update
